@@ -21,8 +21,8 @@ spring:
             non-contextual-creation: false
   rabbitmq:
     uri: amqp://guest:guest@localhost:5672/my_vhost
-  profiles:
-    active: dev
+  # profiles:
+  #   active: dev
 
 ead:
   api:
