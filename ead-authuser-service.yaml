@@ -31,6 +31,18 @@ ead:
     exchange:
       userEvent: ead.userevent
 
+authuser:
+  refreshscope:
+    name: Michelli Brito UPDATE!!!!!!!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health            
+
 logging:
   level:
     com.ead: TRACE
