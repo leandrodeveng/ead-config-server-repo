@@ -1,0 +1,50 @@
+server:
+  port: 8082
+  servlet:
+    context-path: '/ead-course/'
+
+spring:
+  application:
+    name: ead-course-service
+  datasource:
+    url:  jdbc:postgresql://localhost:5433/courses_db
+    username: courses
+    password: courses
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true
+  rabbitmq:
+    uri: amqp://guest:guest@localhost:5672/my_vhost
+
+ead:
+  api:
+    course: 'http://ead-authuser-service/ead-authuser'
+  broker:
+    exchange:
+      userEventExchange: ead.userevent
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.course
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8761/eureka'
+  instance:
+    hostname: host.docker.internal #Configuration for development
+    preferIpAddress: false
+    nonSecurePort: ${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health            
