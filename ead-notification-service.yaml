@@ -19,11 +19,8 @@ spring:
         jdbc:
           lob:
             non-contextual-creation: true
-  output:
-    ansi:
-      enabled: Always
   rabbitmq:
-    addresses: amqp://guest:guest@localhost:5672/my_vhost
+    uri: amqp://guest:guest@localhost:5672/my_vhost
 
 
 logging:
