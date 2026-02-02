@@ -52,14 +52,14 @@ logging:
     org.springframework.amqp: DEBUG
     org.springframework.amqp.rabbit.connection: DEBUG
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
-  instance:
-    hostname: host.docker.internal #Configuration for development
-    preferIpAddress: false
-    nonSecurePort: ${server.port}
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: 'http://localhost:8761/eureka'
+#  instance:
+#    hostname: host.docker.internal #Configuration for development
+#    preferIpAddress: false
+#    nonSecurePort: ${server.port}
 
 resilience4j:
   circuitbreaker:
