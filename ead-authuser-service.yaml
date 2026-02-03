@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-authuser-service
   datasource:
-    url:  jdbc:postgresql://localhost:5432/authuser_db
+    url:  jdbc:postgresql://authuser_db:5432/authuser_db
     username: authuser
     password: authuser
   jpa:
@@ -20,7 +20,7 @@ spring:
           lob:
             non-contextual-creation: false
   rabbitmq:
-    uri: amqp://guest:guest@localhost:5672/my_vhost
+    uri: amqp://guest:guest@rabbitmq:5672/my_vhost
   # profiles:
   #   active: dev
 
