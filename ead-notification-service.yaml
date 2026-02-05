@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-notification-service
   datasource:
-    url:  jdbc:postgresql://localhost:5434/notification_db
+    url:  jdbc:postgresql://notification_db:5434/notification_db
     username: notification
     password: notification
   jpa:
@@ -20,7 +20,7 @@ spring:
           lob:
             non-contextual-creation: true
   rabbitmq:
-    uri: amqp://guest:guest@localhost:5672/my_vhost
+    uri: amqp://guest:guest@rabbitmq:5672/my_vhost
 
 
 logging:
@@ -40,14 +40,14 @@ ead:
     key:
       notificationCommandKey: ms.notification
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
-  instance:
-    hostname: host.docker.internal #Configuration for development
-    preferIpAddress: false
-    nonSecurePort: ${server.port}
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: 'http://localhost:8761/eureka'
+#   instance:
+#     hostname: host.docker.internal #Configuration for development
+#     preferIpAddress: false
+#     nonSecurePort: ${server.port}
 
 management:
   endpoints:

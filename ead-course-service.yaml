@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-course-service
   datasource:
-    url:  jdbc:postgresql://localhost:5433/courses_db
+    url:  jdbc:postgresql://courses_db:5433/courses_db
     username: courses
     password: courses
   jpa:
@@ -20,7 +20,7 @@ spring:
           lob:
             non-contextual-creation: true
   rabbitmq:
-    uri: amqp://guest:guest@localhost:5672/my_vhost
+    uri: amqp://guest:guest@rabbitmq:5672/my_vhost
 
 ead:
   api:
@@ -35,14 +35,14 @@ ead:
     key:
       notificationCommandKey: ms.notification
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
-  instance:
-    hostname: host.docker.internal #Configuration for development
-    preferIpAddress: false
-    nonSecurePort: ${server.port}
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: 'http://localhost:8761/eureka'
+#   instance:
+#     hostname: host.docker.internal #Configuration for development
+#     preferIpAddress: false
+#     nonSecurePort: ${server.port}
 
 management:
   endpoints:
