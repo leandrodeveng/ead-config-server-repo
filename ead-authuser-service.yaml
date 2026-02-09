@@ -21,8 +21,6 @@ spring:
             non-contextual-creation: false
   rabbitmq:
     uri: amqp://guest:guest@rabbitmq:5672/my_vhost
-  # profiles:
-  #   active: dev
 
 ead:
   api:
@@ -51,15 +49,6 @@ logging:
     org.hibernate: INFO
     org.springframework.amqp: DEBUG
     org.springframework.amqp.rabbit.connection: DEBUG
-
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: 'http://localhost:8761/eureka'
-#  instance:
-#    hostname: host.docker.internal #Configuration for development
-#    preferIpAddress: false
-#    nonSecurePort: ${server.port}
 
 resilience4j:
   circuitbreaker:
