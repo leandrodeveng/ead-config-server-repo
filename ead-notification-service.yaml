@@ -40,15 +40,6 @@ ead:
     key:
       notificationCommandKey: ms.notification
 
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: 'http://localhost:8761/eureka'
-#   instance:
-#     hostname: host.docker.internal #Configuration for development
-#     preferIpAddress: false
-#     nonSecurePort: ${server.port}
-
 management:
   endpoints:
     web:
